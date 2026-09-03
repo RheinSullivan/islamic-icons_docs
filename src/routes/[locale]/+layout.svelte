@@ -213,7 +213,7 @@
 				</span>
 				<span class="hidden sm:block">
 					<strong class="block font-display text-base font-semibold tracking-tight text-islamic-text">Islamic Icons</strong>
-					<small class="block text-[9px] uppercase tracking-[.18em] text-islamic-dim">Indonesia | Free Palestine</small>
+					<small class="block text-[9px] uppercase tracking-[.18em] text-islamic-dim">Free Palestine 🇵🇸</small>
 				</span>
 			</a>
 
@@ -247,10 +247,10 @@
 					type="button"
 					data-search
 					aria-label="Search icons"
-					class="hidden h-11 cursor-pointer items-center gap-3 rounded-xl border border-islamic-line bg-white/2 px-3.5 text-[12px] text-islamic-muted transition hover:border-islamic-line-strong hover:bg-white/4 hover:text-islamic-text md:flex"
+					class="hidden h-8 cursor-pointer items-center gap-3 rounded-xl border border-islamic-line bg-white/2 px-3.5 text-[12px] text-islamic-muted transition hover:border-islamic-line-strong hover:bg-white/4 hover:text-islamic-text md:flex"
 				>
 					<svg viewBox="0 0 24 24" aria-hidden="true" class="size-4 fill-none stroke-current stroke-[1.7]"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-					<span>Search icons</span>
+					<span>Search...</span>
 					<kbd class="rounded-md border border-islamic-line px-1.5 py-1 text-[9px] tracking-[.08em] text-islamic-dim">CTRL + K</kbd>
 				</button>
 				<!-- GitHub -->

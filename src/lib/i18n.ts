@@ -86,15 +86,15 @@ export const en: Translations = {
 		installation: 'Installation',
 		frameworks: 'Frameworks',
 		contributing: 'Contributing',
-		copyright: 'Copyright © 2026 Athar (أثر). All rights reserved.',
+		copyright: 'Copyright © 2026 Atsarul Mujahidin (آثَارُ المُجَاهِدِيْنَ). All rights reserved.',
 		credits: 'Vyagra Nexus™ | Indonesia',
-		tagline: 'Athar (أثر) - Create something that leaves a lasting impact. Islamic icons for the modern web.'
+		tagline: 'Atsarul Mujahidin (آثَارُ المُجَاهِدِيْنَ) - Traces of the Mujahidin. Create something that leaves a lasting impact for the fighters.'
 	},
 	home: {
-		badge: 'أثر · Athar · Leave a lasting impact',
-		heroWords: ['Athar', 'أثر', 'Islamic', 'icons', 'for', 'modern', 'web.'],
+		badge: 'آثَارُ المُجَاهِدِيْنَ · Atsarul Mujahidin · Traces of the Mujahidin',
+		heroWords: ['Atsarul', 'Mujahidin', 'آثَارُ', 'المُجَاهِدِيْنَ', 'Islamic', 'icons'],
 		heroDesc:
-			'Athar (أثر) means trace, impact, legacy. A source-aware Islamic icon library built for developers who want to create something that leaves a lasting أثر. Use local SVG and WebP assets across React, Vue, Svelte, Angular, Astro, or plain HTML.',
+			'Atsarul Mujahidin (آثَارُ المُجَاهِدِيْنَ) means Traces of the Mujahidin. A source-aware Islamic icon library built for developers who want to create something that leaves a lasting impact for the fighters. Use local SVG and WebP assets across React, Vue, Svelte, Angular, Astro, or plain HTML.',
 		exploreBtn: 'Explore {count} icons',
 		docsBtn: 'Read the documentation',
 		statIcons: 'logical icons',

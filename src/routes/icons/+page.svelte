@@ -41,8 +41,8 @@
 		source = src;
 		category = 'all';
 	}
-	function setVariant(v: 'fill' | 'outline' | 'color') {
-		variant = v;
+	function setVariant(newVariant: 'fill' | 'outline' | 'color') {
+		variant = newVariant;
 	}
 	function openSearch() {
 		if (typeof window !== 'undefined') {

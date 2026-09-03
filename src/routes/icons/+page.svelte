@@ -163,7 +163,7 @@
 					</span>
 					<input
 						id="q"
-						bind:value={q}
+						bind:value={searchQuery}
 						placeholder={translation.icons.searchPlaceholder}
 						autocomplete="off"
 						aria-label={translation.icons.searchPlaceholder}

@@ -92,7 +92,7 @@ export const en: Translations = {
 	},
 	home: {
 		badge: 'Atsarul Mujahidin · Traces of the Mujahidin',
-		heroWords: ['Atsarul', 'Mujahidin', 'Islamic', 'icons', 'for', 'modern', 'web'],
+		heroWords: ['Atsarul', 'Mujahidin', 'for', 'modern', 'web'],
 		heroDesc:
 			'Atsarul Mujahidin means Traces of the Mujahidin. A source-aware Islamic icon library built for developers who want to create something that leaves a lasting impact for the fighters. Use local SVG and WebP assets across React, Vue, Svelte, Angular, Astro, or plain HTML.',
 		exploreBtn: 'Explore {count} icons',

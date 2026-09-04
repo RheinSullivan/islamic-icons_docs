@@ -52,7 +52,7 @@
 	<link rel="canonical" href="https://islamic-icons.dev/{locale}/sources" />
 </svelte:head>
 
-<div class="{MAX} pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-32">
+<div class="{MAX} pt-36pb-14 sm:pt-44 sm:pb-20 lg:pt-32">
 	<div class="gsap-container max-w-3xl">
 		<span class="text-[10px] font-semibold uppercase tracking-[.18em] text-islamic-green">{translation.sources.label}</span>
 		<h1 class="mt-3 font-display text-5xl tracking-[-.06em] sm:text-6xl">{translation.sources.title}</h1>

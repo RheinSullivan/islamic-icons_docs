@@ -29,14 +29,14 @@
 </script>
 
 <svelte:head>
-	<title>{locale === 'en' ? 'Atsarul Mujahidin - Browse Islamic Icons' : 'Atsarul Mujahidin - Jelajahi Ikon Islami'}</title>
+	<title>{locale === 'en' ? 'Atsarul Mujahidin - Browse Icons' : 'Atsarul Mujahidin - Jelajahi Ikon'}</title>
 	<meta name="description" content={translation.icons.pageDesc} />
-	<meta property="og:title" content={locale === 'en' ? 'Atsarul Mujahidin - Browse Islamic Icons' : 'Atsarul Mujahidin - Jelajahi Ikon Islami'} />
+	<meta property="og:title" content={locale === 'en' ? 'Atsarul Mujahidin - Browse Icons' : 'Atsarul Mujahidin - Jelajahi Ikon'} />
 	<meta property="og:description" content={translation.icons.pageDesc} />
 	<link rel="canonical" href="https://islamic-icons.dev/{locale}/icons" />
 </svelte:head>
 
-<div class="{MAX} pt-32 pb-16 sm:pt-36 sm:pb-24">
+<div class="{MAX} pt-32 pb-14 sm:pt-36 sm:pb-20">
 	<div class="grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)]">
 		<!-- Sidebar - exact from native -->
 		<aside class="lg:sticky lg:top-28 lg:h-fit">

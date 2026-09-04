@@ -91,9 +91,9 @@
 	async function copyText(text: string) {
 		try {
 			await navigator.clipboard.writeText(text);
-			showToast(t.drawer.copied);
+			showToast(translation.drawer.copied);
 		} catch {
-			showToast(t.drawer.copyUnavailable);
+			showToast(translation.drawer.copyUnavailable);
 		}
 	}
 
@@ -338,11 +338,14 @@
 			<div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
 				<div>
 					<div class="flex items-center gap-3">
-						<img src={logo} alt="Islamic Icons logo" class="size-8 shrink-0 object-contain" />
-						<span class="font-display text-lg font-semibold text-islamic-text">Islamic Icons</span>
+						<img src={logo} alt="Atsarul Mujahidin logo" class="size-8 shrink-0 object-contain" />
+						<div class="flex flex-col">
+							<strong class="block font-display text-base font-semibold text-islamic-text">Atsarul Mujahidin</strong>
+							<small class="block text-[9px] uppercase tracking-[.18em] text-islamic-dim">Free Sudan 🇸🇩</small>
+						</div>
 					</div>
-					<p class="mt-3 max-w-xs text-[11px] text-islamic-dim">Framework-agnostic Islamic SVG/WebP icons, organized for real projects.</p>
-					<span class="mt-4 block text-[10px] text-islamic-muted">Islam Community</span>
+					<p class="mt-3 max-w-xs text-[11px] text-islamic-dim">{translation.footer.tagline}</p>
+					<span class="mt-4 block text-[10px] text-islamic-muted">Muslim Tech Community</span>
 				</div>
 				<div class="grid content-start gap-2">
 					<b class="mb-2 text-[10px] uppercase tracking-[.16em] text-islamic-text">{translation.footer.explore}</b>

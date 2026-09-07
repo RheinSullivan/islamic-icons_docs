@@ -11,7 +11,7 @@
 	const entry: DocEntry = $derived(docs[path] ?? docs['/docs']);
 	const currentPath = $derived(page.url.pathname.replace(/\/$/, '') || '/');
 	
-	let processedBody = $state(richBody(entry.body));
+	let processedBody = $derived(richBody(entry.body));
 
 	onMount(async () => {
 		try {

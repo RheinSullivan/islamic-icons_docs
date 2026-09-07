@@ -69,7 +69,6 @@
 				></span>
 				{translation.home.badge}
 			</div>
-			<Camel size={200} colors="red" /> ini unta
 			<h1
 				class="hero-title max-w-3xl font-display text-[clamp(54px,6.6vw,96px)] font-medium leading-[.9] tracking-[-.065em]"
 				aria-label="Atsarul Mujahidin for the modern web."

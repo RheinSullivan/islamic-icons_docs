@@ -36,7 +36,6 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.3.3",
-		"atsarul-mujahidin": "link:../library",
 		"tailwindcss": "^4.3.3"
 	}
 }

@@ -12,10 +12,9 @@
 	} from '$lib/site';
 	import { translations, type Locale } from '$lib/i18n';
 	import DynamicIcon from '$lib/components/DynamicIcon.svelte';
-	
-	// Test library import - using DynamicIcon instead of direct component import
-	// Direct import like: import Camel from 'atsarul-mujahidin/svelte/fill/Camel'
-	// requires library to be published to npm with proper exports
+	// Import Camel component untuk testing
+	// @ts-ignore - local import for testing
+	import Camel from '../../../Library/svelte/fill/Camel.svelte';
 
 	let { data } = $props();
 	const locale = $derived(data.locale as Locale);
@@ -24,7 +23,6 @@
 	const featuredIcons = $derived(featured);
 	const mosqueIcon = icon('mosque-simple');
 	const lanternIcon = icon('lantern-outline');
-	const camelIcon = icon('camel'); // Test icon for Camel
 </script>
 
 <svelte:head>
@@ -75,13 +73,10 @@
 				{translation.home.badge}
 			</div>
 			
-			<!-- Test Camel Icon -->
-			{#if camelIcon}
-				<div class="mb-4 inline-flex items-center gap-3">
-					<DynamicIcon item={camelIcon} variant="fill" size={48} class="text-islamic-green" />
-					<span class="text-sm text-islamic-muted">Camel icon test - Library working!</span>
-				</div>
-			{/if}
+			<!-- Test Camel Component -->
+			<div class="mb-4">
+				<Camel size={32} />
+			</div>
 			
 			<h1
 				class="hero-title max-w-3xl font-display text-[clamp(54px,6.6vw,96px)] font-medium leading-[.9] tracking-[-.065em]"

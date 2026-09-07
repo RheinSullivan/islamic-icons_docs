@@ -4,7 +4,7 @@
 	import { sideLinks } from '$lib/site';
 	import { docs, richBody, type DocEntry } from '$lib/docs-content';
 	import { MAX } from '$lib/site';
-	import { getHighlighter } from 'shiki';
+	import { createHighlighter } from 'shiki';
 
 	let { path = '/docs' }: { path?: string } = $props();
 
@@ -15,7 +15,7 @@
 
 	onMount(async () => {
 		try {
-			const highlighter = await getHighlighter({
+			const highlighter = await createHighlighter({
 				themes: ['github-dark'],
 				langs: ['javascript', 'typescript', 'bash', 'shell', 'html', 'css', 'json', 'jsx', 'tsx', 'sh']
 			});

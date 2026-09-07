@@ -12,7 +12,6 @@
 	} from '$lib/site';
 	import { translations, type Locale } from '$lib/i18n';
 	import DynamicIcon from '$lib/components/DynamicIcon.svelte';
-	import Camel from 'atsarul-mujahidin/svelte/fill/Camel';
 
 	let { data } = $props();
 	const locale = $derived(data.locale as Locale);

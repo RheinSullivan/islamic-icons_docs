@@ -13,7 +13,7 @@
 	} from '$lib/site';
 	import { translations, type Locale } from '$lib/i18n';
 	import DynamicIcon from '$lib/components/DynamicIcon.svelte';
-	import { getHighlighter, type Highlighter } from 'shiki';
+	import { createHighlighter, type Highlighter } from 'shiki';
 
 	let { data } = $props();
 	const locale = $derived(data.locale as Locale);
@@ -214,7 +214,7 @@ import { ${pascalComponentName} } from 'atsarul-mujahidin/react/${iconKebabName}
 
 	onMount(async () => {
 		try {
-			highlighter = await getHighlighter({
+			highlighter = await createHighlighter({
 				themes: ['github-dark'],
 				langs: ['typescript', 'javascript', 'html', 'svelte', 'vue', 'tsx', 'jsx', 'astro']
 			});
@@ -629,7 +629,7 @@ import { ${pascalComponentName} } from 'atsarul-mujahidin/react/${iconKebabName}
 							Copy Code
 						</button>
 						{#if highlighter}
-							<div class="code-highlighted overflow-x-auto rounded-xl border border-islamic-line">
+							<div class="[&_pre]:p-5 [&_pre]:font-mono [&_pre]:text-[11px] [&_pre]:leading-relaxed [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:border [&_pre]:border-islamic-line [&_code]:text-[11px]">
 								{@html highlightedSnippet}
 							</div>
 						{:else}
@@ -709,14 +709,3 @@ import { ${pascalComponentName} } from 'atsarul-mujahidin/react/${iconKebabName}
 		{toastMsg}
 	</div>
 {/if}
-
-
-<style>
-	:global(.code-highlighted pre) {
-		@apply p-5 font-mono text-[11px] leading-relaxed;
-	}
-
-	:global(.code-highlighted code) {
-		@apply text-[11px];
-	}
-</style>

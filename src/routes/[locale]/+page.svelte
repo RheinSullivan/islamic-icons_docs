@@ -12,9 +12,7 @@
 	} from '$lib/site';
 	import { translations, type Locale } from '$lib/i18n';
 	import DynamicIcon from '$lib/components/DynamicIcon.svelte';
-	// Import Camel component untuk testing
-	// @ts-ignore - local import for testing
-	import Camel from '../../../Library/svelte/fill/Camel.svelte';
+
 
 	let { data } = $props();
 	const locale = $derived(data.locale as Locale);
@@ -72,12 +70,7 @@
 				></span>
 				{translation.home.badge}
 			</div>
-			
-			<!-- Test Camel Component -->
-			<div class="mb-4">
-				<Camel size={32} />
-			</div>
-			
+
 			<h1
 				class="hero-title max-w-3xl font-display text-[clamp(54px,6.6vw,96px)] font-medium leading-[.9] tracking-[-.065em]"
 				aria-label="Atsarul Mujahidin for the modern web."
@@ -273,21 +266,6 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	@keyframes scroll-carousel {
-		from { transform: translateX(0); }
-		to { transform: translateX(-50%); }
-	}
-
-	.icon-carousel {
-		animation: scroll-carousel 40s linear infinite;
-	}
-
-	.icon-carousel:hover {
-		animation-play-state: paused;
-	}
-</style>
 
 <!-- Why section -->
 <section class="{MAX} py-16 sm:py-24">

@@ -61,38 +61,52 @@ export const docs: Record<string, DocEntry> = {
 
 <h2>React / Next.js</h2>
 <pre>import WudhuAblution from 'atsarul-mujahidin/react/wudhu-ablution-fill';
+import Kaaba from 'atsarul-mujahidin/react/kaaba-fill';
 
 export function MyComponent() {
-  return &lt;WudhuAblution size={32} /&gt;;
+  return (
+    &lt;&gt;
+      &lt;WudhuAblution size={32} /&gt;
+      &lt;Kaaba size={48} /&gt;
+    &lt;/&gt;
+  );
 }</pre>
 
 <h2>Vue / Nuxt</h2>
 <pre>&lt;script setup&gt;
 import WudhuAblution from 'atsarul-mujahidin/vue/wudhu-ablution-fill';
+import Kaaba from 'atsarul-mujahidin/vue/kaaba-fill';
 &lt;/script&gt;
 
 &lt;template&gt;
-  &lt;WudhuAblution :size="32" /&gt;
+  &lt;div&gt;
+    &lt;WudhuAblution :size="32" /&gt;
+    &lt;Kaaba :size="48" /&gt;
+  &lt;/div&gt;
 &lt;/template&gt;</pre>
 
 <h2>Svelte / SvelteKit</h2>
 <pre>&lt;script&gt;
   import WudhuAblution from 'atsarul-mujahidin/svelte/fill/WudhuAblution';
+  import Kaaba from 'atsarul-mujahidin/svelte/fill/Kaaba';
 &lt;/script&gt;
 
-&lt;WudhuAblution size={32} /&gt;</pre>
+&lt;WudhuAblution size={32} /&gt;
+&lt;Kaaba size={48} /&gt;</pre>
 
 <h2>Vanilla JavaScript (Web Component)</h2>
 <pre>&lt;script type="module"&gt;
   import 'atsarul-mujahidin/vanilla/atsarul-mujahidin.js';
 &lt;/script&gt;
 
-&lt;atsarul-mujahidin-icon name="wudhu-ablution" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
+&lt;atsarul-mujahidin-icon name="wudhu-ablution" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;
+&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
 
 <h2>Via CDN</h2>
 <pre>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/atsarul-mujahidin@0.1.3/vanilla/atsarul-mujahidin.js"&gt;&lt;/script&gt;
 
-&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
+&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;
+&lt;atsarul-mujahidin-icon name="quran-book" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
 
 <h2>Metadata API</h2>
 <p>Access icon catalog programmatically:</p>
@@ -339,38 +353,52 @@ export const docsId: Record<string, DocEntry> = {
 
 <h2>React / Next.js</h2>
 <pre>import WudhuAblution from 'atsarul-mujahidin/react/wudhu-ablution-fill';
+import Kaaba from 'atsarul-mujahidin/react/kaaba-fill';
 
 export function MyComponent() {
-  return &lt;WudhuAblution size={32} /&gt;;
+  return (
+    &lt;&gt;
+      &lt;WudhuAblution size={32} /&gt;
+      &lt;Kaaba size={48} /&gt;
+    &lt;/&gt;
+  );
 }</pre>
 
 <h2>Vue / Nuxt</h2>
 <pre>&lt;script setup&gt;
 import WudhuAblution from 'atsarul-mujahidin/vue/wudhu-ablution-fill';
+import Kaaba from 'atsarul-mujahidin/vue/kaaba-fill';
 &lt;/script&gt;
 
 &lt;template&gt;
-  &lt;WudhuAblution :size="32" /&gt;
+  &lt;div&gt;
+    &lt;WudhuAblution :size="32" /&gt;
+    &lt;Kaaba :size="48" /&gt;
+  &lt;/div&gt;
 &lt;/template&gt;</pre>
 
 <h2>Svelte / SvelteKit</h2>
 <pre>&lt;script&gt;
   import WudhuAblution from 'atsarul-mujahidin/svelte/fill/WudhuAblution';
+  import Kaaba from 'atsarul-mujahidin/svelte/fill/Kaaba';
 &lt;/script&gt;
 
-&lt;WudhuAblution size={32} /&gt;</pre>
+&lt;WudhuAblution size={32} /&gt;
+&lt;Kaaba size={48} /&gt;</pre>
 
 <h2>Vanilla JavaScript (Web Component)</h2>
 <pre>&lt;script type="module"&gt;
   import 'atsarul-mujahidin/vanilla/atsarul-mujahidin.js';
 &lt;/script&gt;
 
-&lt;atsarul-mujahidin-icon name="wudhu-ablution" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
+&lt;atsarul-mujahidin-icon name="wudhu-ablution" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;
+&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
 
 <h2>Via CDN</h2>
 <pre>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/atsarul-mujahidin@0.1.3/vanilla/atsarul-mujahidin.js"&gt;&lt;/script&gt;
 
-&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
+&lt;atsarul-mujahidin-icon name="kaaba" variant="fill" size="48"&gt;&lt;/atsarul-mujahidin-icon&gt;
+&lt;atsarul-mujahidin-icon name="quran-book" variant="fill" size="32"&gt;&lt;/atsarul-mujahidin-icon&gt;</pre>
 
 <h2>API Metadata</h2>
 <p>Akses katalog ikon secara programatis:</p>

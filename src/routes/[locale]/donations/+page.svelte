@@ -302,48 +302,53 @@
 
 	const donationPhotos = $derived.by(() => {
 		// Real humanitarian images from Unsplash (NO ICONS, IMAGES ONLY!)
+		// EXACT LAYOUT FROM SCREENSHOT:
+		// Col 1: Palestine (row-span-2) + Food Aid (row-span-1)
+		// Col 2: Sudan (row-span-1) + Disaster (row-span-1) + Elderly (row-span-1)  
+		// Col 3: Orphan Care (row-span-3 VERY TALL)
 		const base = [
 			{
 				image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/palestina',
-				span: 'sm:col-span-1 sm:row-span-2', // Left column - tall
+				span: 'lg:col-span-1 lg:row-span-2', // Left - Palestine (TALL)
 				featured: true
 			},
 			{
 				image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=85',
 				source: 'Kitabisa.com', 
 				sourceUrl: 'https://kitabisa.com/campaign/sudan',
-				span: 'sm:col-span-1 sm:row-span-1', // Middle column - top
-				featured: false
-			},
-			{
-				image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=85',
-				source: 'Kitabisa.com',
-				sourceUrl: 'https://kitabisa.com/campaign/bencana',
-				span: 'sm:col-span-1 sm:row-span-2', // Middle column - big chart area
+				span: 'lg:col-span-1 lg:row-span-1', // Middle - Sudan (TOP)
 				featured: false
 			},
 			{
 				image: 'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/yatim',
-				span: 'sm:col-span-1 sm:row-span-1', // Right column - top
+				span: 'lg:col-span-1 lg:row-span-3', // Right - Orphan (VERY TALL)
+				featured: false
+			},
+			{
+				image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=85',
+				source: 'Kitabisa.com',
+				sourceUrl: 'https://kitabisa.com/campaign/bencana',
+				span: 'lg:col-span-1 lg:row-span-1', // Middle - Disaster (MIDDLE)
 				featured: false
 			},
 			{
 				image: 'https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/pangan',
-				span: 'sm:col-span-1 sm:row-span-1', // Left column - bottom
+				span: 'lg:col-span-1 lg:row-span-1', // Left - Food Aid (BOTTOM)
 				featured: false
 			},
 			{
 				image: 'https://images.unsplash.com/photo-1505851011316-dbc55d595e59?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/lansia',
-				span: 'sm:col-span-1 sm:row-span-1', // Right column - middle/bottom
-				featured: false
+				span: 'lg:col-span-1 lg:row-span-1', // Middle - Elderly Care (BOTTOM with description)
+				featured: false,
+				showDescription: true
 			}
 		];
 
@@ -382,7 +387,7 @@
 
 	<section class="mt-14">
 		<h2 class="mb-6 font-display text-2xl font-semibold tracking-[-.03em]">{donationContent.bentoHeading}</h2>
-		<!-- Bento Grid Layout with REAL IMAGES ONLY (3 column layout like dashboard) -->
+		<!-- Bento Grid Layout with REAL IMAGES ONLY (3 column layout matching screenshot) -->
 		<div class="grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{#each donationPhotos as photo (photo.title)}
 				<article
@@ -400,7 +405,7 @@
 							<span class="mb-2 inline-block rounded-full border border-white/20 bg-white/10 px-2 py-1 text-[9px] font-semibold uppercase tracking-[.14em] text-white backdrop-blur-sm">{photo.category}</span>
 						{/if}
 						<h3 class="font-display text-{photo.featured ? 'xl' : 'base'} font-semibold text-white">{photo.title}</h3>
-						{#if photo.description && photo.featured}
+						{#if photo.description && (photo.featured || photo.showDescription)}
 							<p class="mt-2 text-sm text-white/80">{photo.description}</p>
 						{/if}
 						<a

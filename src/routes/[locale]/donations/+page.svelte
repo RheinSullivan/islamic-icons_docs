@@ -1,22 +1,10 @@
 <script lang="ts">
-	import { MAX, icon } from '$lib/site';
+	import { MAX } from '$lib/site';
 	import { translations, type Locale } from '$lib/i18n';
-	import type { CatalogItem } from '$lib/types';
-	import DynamicIcon from '$lib/components/DynamicIcon.svelte';
 
 	let { data } = $props();
 	const locale = $derived(data.locale as Locale);
 	const translation = $derived(translations[locale]);
-
-	// Get icon catalog items for fallback
-	const iconItems: Record<string, { item: CatalogItem | undefined; variant: string }> = {
-		'palestine-flag-color': { item: icon('palestine-brush'), variant: 'color' },
-		'muslim-family-fill': { item: icon('muslim-family'), variant: 'fill' },
-		'muslim-family-child-fill': { item: icon('muslim-family-child'), variant: 'fill' },
-		'dua-hands-fill': { item: icon('dua-hands'), variant: 'fill' },
-		'ketupat-fill': { item: icon('ketupat'), variant: 'fill' },
-		'muslim-woman-fill': { item: icon('muslim-woman'), variant: 'fill' }
-	};
 
 	const donationContent = $derived.by(() => {
 		const dict = {
@@ -313,55 +301,49 @@
 	});
 
 	const donationPhotos = $derived.by(() => {
-		// Real Kitabisa.com campaigns with varied bento layout
+		// Real humanitarian images from Unsplash (NO ICONS, IMAGES ONLY!)
 		const base = [
 			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
+				image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/palestina',
-				span: 'sm:col-span-2 sm:row-span-2', // BIG 2x2
-				featured: true,
-				fallbackIcon: 'palestine-flag-color'
+				span: 'sm:col-span-1 sm:row-span-2', // Left column - tall
+				featured: true
 			},
 			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
+				image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=85',
 				source: 'Kitabisa.com', 
 				sourceUrl: 'https://kitabisa.com/campaign/sudan',
-				span: 'sm:col-span-1 sm:row-span-1', // SMALL 1x1
-				featured: false,
-				fallbackIcon: 'muslim-family-fill'
+				span: 'sm:col-span-1 sm:row-span-1', // Middle column - top
+				featured: false
 			},
 			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
-				source: 'Kitabisa.com',
-				sourceUrl: 'https://kitabisa.com/campaign/yatim',
-				span: 'sm:col-span-1 sm:row-span-1', // SMALL 1x1
-				featured: false,
-				fallbackIcon: 'muslim-family-child-fill'
-			},
-			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
+				image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/bencana',
-				span: 'sm:col-span-2 sm:row-span-1', // WIDE 2x1
-				featured: false,
-				fallbackIcon: 'dua-hands-fill'
+				span: 'sm:col-span-1 sm:row-span-2', // Middle column - big chart area
+				featured: false
 			},
 			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
+				image: 'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800&q=85',
+				source: 'Kitabisa.com',
+				sourceUrl: 'https://kitabisa.com/campaign/yatim',
+				span: 'sm:col-span-1 sm:row-span-1', // Right column - top
+				featured: false
+			},
+			{
+				image: 'https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/pangan',
-				span: 'sm:col-span-1 sm:row-span-1', // SMALL 1x1
-				featured: false,
-				fallbackIcon: 'ketupat-fill'
+				span: 'sm:col-span-1 sm:row-span-1', // Left column - bottom
+				featured: false
 			},
 			{
-				image: 'https://kitabisa.com/assets/images/campaign-placeholder.jpg',
+				image: 'https://images.unsplash.com/photo-1505851011316-dbc55d595e59?w=800&q=85',
 				source: 'Kitabisa.com',
 				sourceUrl: 'https://kitabisa.com/campaign/lansia',
-				span: 'sm:col-span-1 sm:row-span-2', // TALL 1x2
-				featured: false,
-				fallbackIcon: 'muslim-woman-fill'
+				span: 'sm:col-span-1 sm:row-span-1', // Right column - middle/bottom
+				featured: false
 			}
 		];
 
@@ -370,16 +352,6 @@
 			...(donationContent.photos[idx] || donationContent.photos[0])
 		}));
 	});
-
-	let imageLoadStates = $state<Record<string, boolean>>({});
-
-	function handleImageError(title: string) {
-		imageLoadStates[title] = false;
-	}
-
-	function handleImageLoad(title: string) {
-		imageLoadStates[title] = true;
-	}
 </script>
 
 <svelte:head>
@@ -410,41 +382,18 @@
 
 	<section class="mt-14">
 		<h2 class="mb-6 font-display text-2xl font-semibold tracking-[-.03em]">{donationContent.bentoHeading}</h2>
-		<!-- Bento Grid Layout with IMAGES -->
-		<div class="grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 sm:grid-cols-3">
+		<!-- Bento Grid Layout with REAL IMAGES ONLY (3 column layout like dashboard) -->
+		<div class="grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{#each donationPhotos as photo (photo.title)}
 				<article
 					class="gsap-on-scroll group relative overflow-hidden rounded-2xl border border-islamic-line bg-islamic-panel {photo.span}"
 				>
-					{#if imageLoadStates[photo.title] === false}
-						<!-- Fallback: Show icon if image failed to load -->
-						<div class="flex size-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-islamic-panel-2 to-islamic-panel p-6">
-							{#if iconItems[photo.fallbackIcon]}
-								{@const iconData = iconItems[photo.fallbackIcon]}
-								{#if iconData.item}
-									<DynamicIcon item={iconData.item} variant={iconData.variant} size={photo.featured ? 160 : 80} class="text-islamic-green opacity-50" />
-								{/if}
-							{/if}
-							<div class="text-center">
-								{#if photo.category}
-									<span class="mb-2 block text-[9px] font-semibold uppercase tracking-[.16em] text-islamic-green">{photo.category}</span>
-								{/if}
-								<h3 class="font-display text-lg font-semibold text-white">{photo.title}</h3>
-								{#if photo.description}
-									<p class="mt-2 text-sm text-white/70">{photo.description}</p>
-								{/if}
-							</div>
-						</div>
-					{:else}
-						<img
-							src={photo.image}
-							alt={photo.alt}
-							class="size-full object-cover transition duration-700 group-hover:scale-105"
-							loading="lazy"
-							onerror={() => handleImageError(photo.title)}
-							onload={() => handleImageLoad(photo.title)}
-						/>
-					{/if}
+					<img
+						src={photo.image}
+						alt={photo.alt}
+						class="size-full object-cover transition duration-700 group-hover:scale-105"
+						loading="lazy"
+					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 					<div class="absolute bottom-0 left-0 right-0 p-5">
 						{#if photo.category}
